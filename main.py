@@ -1,3 +1,5 @@
+import os
+
 import requests
 import urllib3
 from autoCard import autoCard
@@ -5,7 +7,7 @@ from autoCard import autoCard
 urllib3.disable_warnings()
 
 
-def weixin_notification(msg):
+def wx_push(msg):
     token = "AT_W1JBkiGuFHrnxY8lyXcJ78Ow4JU6Ukhj"
     url = "http://wxpusher.zjiecode.com/api/send/message"
     body = {
@@ -23,13 +25,8 @@ def weixin_notification(msg):
     print(response.text)
 
 
-def main_handler(event, context):
-    autocard = autoCard()
-    result = autocard.run()
-    weixin_notification(result)
-    return result
-
-
 if __name__ == '__main__':
-    autoCard = autoCard("2020010907003","3895823abc")
-    weixin_notification(autoCard.run())
+    username = os.environ.get("username")
+    password = os.environ.get("password")
+    autoCard = autoCard(username, password)
+    wx_push(autoCard.run())
