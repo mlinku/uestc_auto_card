@@ -1,8 +1,9 @@
 name: Daily autoCard
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "5 0 * * *"
+    - cron: "31 15 * * *" 
 
 jobs:
   build:
@@ -21,6 +22,8 @@ jobs:
 
       - name: Run application
         env:
-          username: ${{ secrets.username }}
-          password: ${{ secrets.password }}
-        run: python -u src/main.py
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          TOKEN: ${{ secrets.TOKEN }}
+          UIDS: ${{ secrets.UIDS }}
+        run: python -u main.py

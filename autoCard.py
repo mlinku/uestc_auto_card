@@ -9,11 +9,8 @@ import verCaptcha
 
 def nowTimestamp(digits=13):
     timestamp = time.time()
-
     digits = 10 ** (digits - 10)
-
     timestamp = int(round(timestamp * digits))
-
     return str(timestamp)
 
 
@@ -112,5 +109,3 @@ class autoCard:
             return "打卡异常"
         else:
             return "账号或密码错误"
-
-

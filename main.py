@@ -1,5 +1,4 @@
 import os
-
 import requests
 import urllib3
 from autoCard import autoCard
@@ -7,26 +6,27 @@ from autoCard import autoCard
 urllib3.disable_warnings()
 
 
-def wx_push(msg):
-    token = "AT_W1JBkiGuFHrnxY8lyXcJ78Ow4JU6Ukhj"
+def wx_push(msg, token, uids):
     url = "http://wxpusher.zjiecode.com/api/send/message"
     body = {
         "appToken": token,
         "content": msg,
         "contentType": 1,
         "uids": [
-            "UID_RVzTGvjgi7ERYrt2yfsG7bg825wg"
+            uids
         ]
     }
     headers = {
         'Content-Type': 'application/json'
     }
     response = requests.post(url=url, headers=headers, json=body)
-    print(response.text)
 
 
 if __name__ == '__main__':
-    username = os.environ.get("username")
-    password = os.environ.get("password")
+    username = os.environ.get("USERNAME")
+    password = os.environ.get("PASSWORD")
+    token = os.environ.get("TOKEN")
+    uids = os.environ.get("UIDS")
     autoCard = autoCard(username, password)
-    wx_push(autoCard.run())
+    if token is not None and uids is  not None:
+        wx_push(autoCard.run(), token, uids)

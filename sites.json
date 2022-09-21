@@ -67,10 +67,19 @@
       "temperature": "36°C~36.5°C",
       "province": "广东省",
       "city": "揭阳市",
-      "county": "普宁市",
-      "latitude": 23.294846,
-      "longitude": 116.170402
+      "county": "普宁市"
     },
     "description": "离校学生数据"
+  },
+  "school": {
+    "method": "POST",
+    "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegisterForReturned",
+    "data": {
+      "healthCondition": "正常",
+      "todayMorningTemperature": "36.5°C~36.9°C",
+      "location": "四川省成都市郫都区丹桂路",
+      "healthColor": "绿色"
+    },
+    "description": "在校学生数据"
   }
 }
