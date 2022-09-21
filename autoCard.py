@@ -30,6 +30,9 @@ class autoCard:
             self.__sites = json.load(fr)
         self.__set_sites("login", "data", "username", username)
         self.__set_sites("login", "data", "password", password)
+        self.__set_sites("home", "data", str(self.__sites["home"]["data"]).encode("utf-8"))
+        self.__set_sites("school", "data", str(self.__sites["school"]["data"]).encode("utf-8"))
+
 
     def __request(self, api, allow_redirects=True):
         site = self.__sites[api]
