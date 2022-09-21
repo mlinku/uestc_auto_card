@@ -1,0 +1,76 @@
+{
+  "page": {
+    "method": "GET",
+    "url": "https://jzsz.uestc.edu.cn/",
+    "data": {},
+    "description": "登录智慧学工页面(第一次获取重定向链接，第二次携带idas域登录后的cookie访问获取jzsz域的cookie)"
+  },
+  "login": {
+    "method": "GET",
+    "url": "",
+    "data": {
+      "username": "STUDENT NUMBER",
+      "password": "PASSWORD"
+    },
+    "description": "url为第一次访问page链接获取的重定向链接，用于账号登录"
+
+  },
+  "captcha": {
+    "method": "GET",
+    "url": "https://idas.uestc.edu.cn/authserver/sliderCaptcha.do?_=",
+    "data": {},
+    "description": "获取滑动验证码信息"
+  },
+  "verify": {
+    "method": "GET",
+    "url": "https://idas.uestc.edu.cn/authserver/verifySliderImageCode.do?canvasLength=280&moveLength=",
+    "data": {},
+    "description": "验证滑动验证码"
+  },
+  "ticket": {
+    "method": "GET",
+    "url": "",
+    "data": {},
+    "description": "登录成功的重定向链接 该链接登录进入jzsz域并获得cookie"
+  },
+  "status": {
+    "method": "GET",
+    "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/checkRegisterNew",
+    "data": {},
+    "description": "查询学生状态"
+  },
+  "path": {
+    "method": "GET",
+    "url": "https://jzsz.uestc.edu.cn/information-center/xd/config/getDisplays?_t=",
+    "data": {},
+    "description": "获取智慧学工文件资源地址(后续用于获取cookie中的JESSIONID)"
+  },
+  "bind": {
+    "method": "GET",
+    "url": "https://jzsz.uestc.edu.cn/fastdfs-util/api/fastdfs/download/image?filePath=",
+    "data": {},
+    "description": "获取cookie中的JESSIONID"
+  },
+  "home": {
+    "method": "POST",
+    "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegister",
+    "data": {
+      "currentAddress": "广东省揭阳市普宁市光明路15号",
+      "remark": "",
+      "healthInfo": "正常",
+      "healthColor": "绿色",
+      "isContactWuhan": 0,
+      "isFever": 0,
+      "isInSchool": 0,
+      "isLeaveChengdu": 1,
+      "isSymptom": 0,
+      "temperature": "36°C~36.5°C",
+      "province": "广东省",
+      "city": "揭阳市",
+      "county": "普宁市",
+      "latitude": 23.294846,
+      "longitude": 116.170402
+    },
+    "description": "离校学生数据"
+  }
+}
