@@ -1,9 +1,7 @@
 import os
-
 import requests
 import urllib3
 from autoCard import autoCard
-
 urllib3.disable_warnings()
 
 
