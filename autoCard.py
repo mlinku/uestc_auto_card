@@ -104,7 +104,7 @@ class autoCard:
             if status["appliedTimes"] != 0:
                 return "已经打过卡了"
             elif status["schoolStatus"] == 0:
-                print(self.__request("home").text)
+                self.__request("home")
             elif status["schoolStatus"] == 1:
                 self.__request("school")
             status = self.__request("status").json()["data"]
