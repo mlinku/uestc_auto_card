@@ -24,4 +24,4 @@ jobs:
         env:
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
-        run: python -u src/main.py
+        run: python -u main.py
