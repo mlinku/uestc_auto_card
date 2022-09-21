@@ -8,7 +8,7 @@
 
 3. 点击Settings，找到Secrets中的Actions，分别添加`USERNAME`和`PASSWORD`属性，输入`学号`和`信息门户密码`
 
-4. 如果需要打卡后的wx推送服务，本项目提供了`WxPusher`接口，可以注册后同样在3中添加`TOKEN`和`UIDS`属性。（相关文档链接：https://wxpusher.dingliqc.com/docs/）
+4. 如果需要打卡后的wx推送服务，本项目提供了`WxPusher`接口，可以注册后同样在3中添加`TOKEN`和`UIDS`属性。（相关文档链接：`https://wxpusher.dingliqc.com/docs/ `）
 
 #### 注意
 
