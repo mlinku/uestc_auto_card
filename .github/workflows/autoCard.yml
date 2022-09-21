@@ -2,7 +2,7 @@ name: Daily autoCard
 
 on:
   schedule:
-    - cron: "5 0 * * *"
+    - cron: "56 17 * * *"
 
 jobs:
   build:
