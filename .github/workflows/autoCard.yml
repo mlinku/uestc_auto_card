@@ -3,7 +3,11 @@ name: Daily autoCard
 on:
   workflow_dispatch:
   schedule:
+<<<<<<< HEAD
     - cron: "05 16 * * *" 
+=======
+    - cron: "05 16 * * *"
+>>>>>>> eba4464 (优化代码)
 
 jobs:
   build:

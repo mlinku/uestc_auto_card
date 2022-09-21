@@ -38,7 +38,8 @@ class autoCard:
             url=site["url"],
             data=site["data"],
             allow_redirects=allow_redirects
-        ) if site["data"] != {} else self.__session.request(
+        ) if site["data"] != {} else \
+            self.__session.request(
             method=site["method"],
             url=site["url"],
             allow_redirects=allow_redirects
@@ -96,13 +97,13 @@ class autoCard:
     def run(self):
         if self.__login():
             status = self.__request("status").json()["data"]
+            self.__session.headers.update({"content-type": "application/json"})
             if status["appliedTimes"] != 0:
                 return "已经打过卡了"
             elif status["schoolStatus"] == 0:
                 print(self.__request("home").text)
             elif status["schoolStatus"] == 1:
                 self.__request("school")
-
             status = self.__request("status").json()["data"]
             if status["appliedTimes"] != 0:
                 return "打卡成功"

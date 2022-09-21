@@ -19,7 +19,7 @@ def wx_push(msg, token, uids):
     headers = {
         'Content-Type': 'application/json'
     }
-    response = requests.post(url=url, headers=headers, json=body)
+    requests.post(url=url, headers=headers, json=body)
 
 
 if __name__ == '__main__':
