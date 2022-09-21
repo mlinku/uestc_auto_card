@@ -31,3 +31,4 @@ if __name__ == '__main__':
         autoCard = autoCard(username, password)
     if token is not None and uids is  not None:
         wx_push(autoCard.run(), token, uids)
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!")
