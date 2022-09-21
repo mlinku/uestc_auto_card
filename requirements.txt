@@ -3,3 +3,4 @@ numpy==1.21.2
 opencv_python==4.5.5.64
 requests==2.27.1
 urllib3==1.23
+PyExecJS==1.5.1
