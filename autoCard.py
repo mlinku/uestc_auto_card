@@ -99,7 +99,7 @@ class autoCard:
             if status["appliedTimes"] != 0:
                 return "已经打过卡了"
             elif status["schoolStatus"] == 0:
-                self.__request("home")
+                print(self.__request("home").text)
             elif status["schoolStatus"] == 1:
                 self.__request("school")
 
