@@ -28,7 +28,7 @@ if __name__ == '__main__':
     token = os.environ.get("TOKEN")
     uids = os.environ.get("UIDS")
     print("!!!!!!!!!!!")
-    if token is None:
+    if token is "":
         print("~~~~~~~~~~~~~")
     if username is not None and password is not None:
         autoCard = autoCard(username, password)
