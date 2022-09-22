@@ -29,5 +29,6 @@ if __name__ == '__main__':
     uids = os.environ.get("UIDS")
     if username is not None and password is not None:
         autoCard = autoCard(username, password)
-    if token is not None and uids is  not None:
-        wx_push(autoCard.run(), token, uids)
+        msg = autoCard.run()
+        if token is not None and uids is  not None:
+            wx_push(msg, token, uids)
