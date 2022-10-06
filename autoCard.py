@@ -40,12 +40,14 @@ class autoCard:
             method=site["method"],
             url=site["url"],
             data=site["data"],
-            allow_redirects=allow_redirects
+            allow_redirects=allow_redirects,
+            timeout=5
         ) if site["data"] != {} else \
             self.__session.request(
             method=site["method"],
             url=site["url"],
-            allow_redirects=allow_redirects
+            allow_redirects=allow_redirects,
+            timeout=5
         )
 
     def __set_sites(self, api, item, content1, content2=None):
