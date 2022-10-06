@@ -3,7 +3,7 @@ name: Daily autoCard
 on:
   workflow_dispatch:
   schedule:
-    - cron: "05 24 * * *"
+    - cron: "05 18 * * *"
 
 jobs:
   build:
