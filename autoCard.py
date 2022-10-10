@@ -66,7 +66,8 @@ class autoCard:
     def __verify_captcha(self):
         move_base64, bg_base64 = self.__get_captcha()
         move_length = verCaptcha.getCapath(move_base64, bg_base64)
-        self.__set_sites("verify", "url", self.__sites["verify"]["url"] + move_length)
+        self.__set_sites("verify", "url",
+                         self.__sites["verify"]["url"][:self.__sites["verify"]["url"].rfind("=") + 1] + move_length)        
         verify_ans = self.__request("verify").json()
         if verify_ans['code'] != 0:
             self.__verify_captcha()
